@@ -29,6 +29,12 @@ type ErrorResponse struct {
 	Message string `json:"message"`
 }
 
+type ServerConfigurationResponse struct {
+	BufferSize int  `json:"bufferSize"`
+	MTU        int  `json:"mtu"`
+	Compress   bool `json:"compress"`
+}
+
 type RegisterDeviceRequest struct {
 	DeviceId string `json:"id"`
 }
@@ -73,6 +79,18 @@ func StartServer(config config.Config) {
 		}
 		sendJsonResponse(w, http.StatusOK, response)
 	})
+	http.HandleFunc("/config", func(w http.ResponseWriter, r *http.Request) {
+		if !checkPermission(w, r, config) {
+			return
+		}
+		// Decode the JSON request
+		response := ServerConfigurationResponse{
+			BufferSize: config.BufferSize,
+			MTU:        config.MTU,
+			Compress:   config.Compress,
+		}
+		sendJsonResponse(w, http.StatusOK, response)
+	})
 	http.HandleFunc("/allocator/register", func(w http.ResponseWriter, r *http.Request) {
 		if !checkPermission(w, r, config) {
 			return
@@ -95,6 +113,7 @@ func StartServer(config config.Config) {
 		}
 		sendJsonResponse(w, http.StatusOK, response)
 	})
+	// TODO: convert to json
 	http.HandleFunc("/stats", func(w http.ResponseWriter, r *http.Request) {
 		if !checkPermission(w, r, config) {
 			return
