@@ -16,7 +16,11 @@ var initCmd = &cobra.Command{
 		if config.AppConfig.Protocol != "ws" && config.AppConfig.Protocol != "wss" {
 			log.Fatalln("unknown protocol:", config.AppConfig.Protocol)
 		}
-		config.AppConfig.LocalGateway = netutil.DiscoverGateway(true)
+		gateway, err := netutil.DiscoverGateway(true)
+		if err != nil {
+			log.Fatalf("failed to discover gateway: %v", err)
+		}
+		config.AppConfig.LocalGateway = gateway.String()
 		config.AppConfig.ServerMode = true
 		config.AppConfig.GlobalMode = false
 		config.AppConfig.GUIMode = false

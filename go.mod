@@ -25,6 +25,6 @@ require (
 	github.com/gobwas/ws v1.2.1
 	github.com/golang/snappy v0.0.4
 	github.com/spf13/cobra v1.7.0
-	github.com/xorgal/xtun-core v0.0.0-20230722153209-feeadd691293
+	github.com/xorgal/xtun-core v0.0.0-20230725213255-ee89d9bb0892
 	golang.org/x/sys v0.6.0 // indirect
 )

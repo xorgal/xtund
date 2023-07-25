@@ -53,7 +53,10 @@ func InitProtocol(config config.Config) {
 }
 
 func StartServer(config config.Config) {
-	iface := tun.CreateTunInterface(config)
+	iface, err := tun.CreateTunInterface(config)
+	if err != nil {
+		log.Fatalf("failed to create tun device: %v", err)
+	}
 	allocator, err := CreateAllocator(config.CIDR)
 	if err != nil {
 		log.Fatal(err)
