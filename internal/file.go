@@ -37,7 +37,7 @@ var AllocatorDBFile = "allocdb"
 var BinaryMetadata = IBinaryMetadata{
 	BinaryFile:  "xtund",
 	Description: "Command Line Interface (CLI) tool for managing the xtun daemon",
-	Version:     "1.0.0",
+	Version:     "1.0.1",
 }
 
 var DirPath = IDirPath{
