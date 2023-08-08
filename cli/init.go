@@ -35,7 +35,10 @@ var initCmd = &cobra.Command{
 
 		internal.StopService(internal.Service.XTUND)
 		internal.InitProtocol(config.AppConfig)
-		internal.SaveConfigFile(config.AppConfig)
+		err = internal.SaveConfigFile(config.AppConfig)
+		if err != nil {
+			log.Fatal(err)
+		}
 
 		serviceExists := internal.IsIptablesServiceExists(false)
 		if !serviceExists {

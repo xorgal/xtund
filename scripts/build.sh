@@ -12,7 +12,7 @@ if [ -f "$TARGET" ]; then
 fi
 
 echo "Building..."
-GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -trimpath -o $TARGET ./cmd/main.go
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -trimpath -o $TARGET ./cmd/main.go
 
 if [ $? -eq 0 ]; then
     echo "Build status: OK, binary at $TARGET"

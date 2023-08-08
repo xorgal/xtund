@@ -37,7 +37,7 @@ var AllocatorDBFile = "allocdb"
 var BinaryMetadata = IBinaryMetadata{
 	BinaryFile:  "xtund",
 	Description: "Command Line Interface (CLI) tool for managing the xtun daemon",
-	Version:     "1.0.1",
+	Version:     "1.0.2",
 }
 
 var DirPath = IDirPath{
@@ -75,7 +75,7 @@ func SaveConfigFile(config config.Config) error {
 	if err != nil {
 		return err
 	}
-	err = os.WriteFile(DirPath.ConfigDir, file, 0644)
+	err = os.WriteFile(FilePath.ConfigPath, file, 0644)
 	if err != nil {
 		return err
 	}
