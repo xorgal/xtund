@@ -25,12 +25,12 @@ github.com/spf13/cobra v1.7.0/go.mod h1:uLxZILRyS/50WlhOIKD7W6V5bgeIt+4sICxh6uRM
 github.com/spf13/pflag v1.0.5 h1:iy+VFUOCP1a+8yFto/drg2CJ5u0yRoB7fZw3DKv/JXA=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKsk=
-github.com/xorgal/xtun-core v0.0.0-20230722153209-feeadd691293 h1:qWo3sAnqXeKuUUVPLqxRUz/7vlRurK/Ll7yc3m6Hffs=
-github.com/xorgal/xtun-core v0.0.0-20230722153209-feeadd691293/go.mod h1:EJvMMNWtLq7cjJKgYnifJ323aFIFb9q9cMiFq4iwHm8=
 github.com/xorgal/xtun-core v0.0.0-20230725213255-ee89d9bb0892 h1:QMJyynXFm9pu2UlvNkTFPdsh1VKGSiCldgpgpXW/t8k=
 github.com/xorgal/xtun-core v0.0.0-20230725213255-ee89d9bb0892/go.mod h1:EJvMMNWtLq7cjJKgYnifJ323aFIFb9q9cMiFq4iwHm8=
 go.etcd.io/bbolt v1.3.7 h1:j+zJOnnEjF/kyHlDDgGnVL/AIqIJPq8UoB2GSNfkUfQ=
 go.etcd.io/bbolt v1.3.7/go.mod h1:N9Mkw9X8x5fupy0IKsmuqVtoGDyxsaDlbk4Rd05IAQw=
+golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd h1:XcWmESyNjXJMLahc3mqVQJcgSTDxFxhETVlfk9uGc38=
+golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
 golang.org/x/net v0.0.0-20220725212005-46097bf591d3 h1:2yWTtPWWRcISTw3/o+s/Y4UOMnQL71DWyToOANFusCg=
 golang.org/x/net v0.0.0-20220725212005-46097bf591d3/go.mod h1:AaygXjzTFtRAg2ttMY5RMuhpJ3cNnI0XpyFJD1iQRSM=
 golang.org/x/sys v0.6.0 h1:MVltZSvRTcU2ljQOhs94SXPftV6DCNnZViHeQps87pQ=

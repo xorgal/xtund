@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/net-byte/water v0.0.9
 	go.etcd.io/bbolt v1.3.7
+	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd
 )
 
 require (
