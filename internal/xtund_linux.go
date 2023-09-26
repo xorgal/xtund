@@ -154,10 +154,28 @@ func StopService(serviceName string) {
 		cmd := exec.Command("systemctl", "stop", serviceName)
 		err := cmd.Run()
 		if err != nil {
-			log.Fatalf("failed to %s %s: %v", "stop", serviceName, err)
+			log.Fatalf("failed to stop %s: %v", serviceName, err)
 		}
 
 		log.Printf("%s stopped", serviceName)
+	}
+}
+
+// StopService attempts to restart systemd service.
+func RestartService(serviceName string) {
+	serviceExists, err := IsServiceExists(serviceName, true)
+	if err != nil {
+		serviceExists = false
+	}
+
+	if serviceExists {
+		cmd := exec.Command("systemctl", "restart", serviceName)
+		err := cmd.Run()
+		if err != nil {
+			log.Fatalf("failed to restart %s: %v", serviceName, err)
+		}
+
+		log.Printf("%s restarted", serviceName)
 	}
 }
 

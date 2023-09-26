@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/xorgal/xtun-core/pkg/config"
 	"github.com/xorgal/xtund/internal"
+	"github.com/xorgal/xtund/server"
 )
 
 var rootCmd = &cobra.Command{
@@ -30,7 +31,7 @@ var rootCmd = &cobra.Command{
 			log.Fatalf("%s did not setup system routes. Did you run \"%s start\"?", s, f)
 		}
 
-		internal.StartServer(config.AppConfig)
+		server.StartServer(config.AppConfig)
 	},
 }
 
@@ -38,6 +39,7 @@ func init() {
 	rootCmd.AddCommand(initCmd)
 	rootCmd.AddCommand(startCmd)
 	rootCmd.AddCommand(stopCmd)
+	rootCmd.AddCommand(restartCmd)
 	rootCmd.AddCommand(statusCmd)
 }
 

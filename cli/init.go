@@ -7,6 +7,7 @@ import (
 	"github.com/xorgal/xtun-core/pkg/config"
 	"github.com/xorgal/xtun-core/pkg/netutil"
 	"github.com/xorgal/xtund/internal"
+	"github.com/xorgal/xtund/server"
 )
 
 var initCmd = &cobra.Command{
@@ -34,7 +35,7 @@ var initCmd = &cobra.Command{
 		}
 
 		internal.StopService(internal.Service.XTUND)
-		internal.InitProtocol(config.AppConfig)
+		server.InitProtocol(config.AppConfig)
 		err = internal.SaveConfigFile(config.AppConfig)
 		if err != nil {
 			log.Fatal(err)
