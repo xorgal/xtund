@@ -1,8 +1,8 @@
 #!/bin/bash
 
 BINARY="xtund"
-REMOTE="test"
-UPLOAD_DIR="tmp"
+REMOTE="gate"
+UPLOAD_DIR="."
 
 "$(dirname "$0")/build.sh"
 
